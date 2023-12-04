@@ -1,1 +1,1 @@
-hassio-addons
+Home assistant add-on
