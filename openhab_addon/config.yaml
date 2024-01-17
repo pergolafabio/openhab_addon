@@ -1,6 +1,6 @@
 name: "OpenHAB"
 description: "OpenHAB empowering the smart home"
-version: "4.0.4"
+version: "4.0.5"
 slug: "openhab"
 init: false
 usb: true
@@ -12,3 +12,11 @@ map:
   - addon_config:rw
   - backup:rw
 host_network: true
+# Default options when used as an HA add-on
+options:
+    http_port: 8080
+    https_port: 8443
+# Schema for the options above
+schema:
+    http_port: int
+    https_port: str
