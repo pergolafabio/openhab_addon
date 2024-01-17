@@ -1,6 +1,6 @@
 name: "OpenHAB"
 description: "OpenHAB empowering the smart home"
-version: "4.0.7"
+version: "4.0.8"
 slug: "openhab"
 init: false
 usb: true
@@ -19,4 +19,4 @@ options:
 # Schema for the options above
 schema:
   http_port: int
-  https_port: str
+  https_port: int
