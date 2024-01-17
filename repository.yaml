@@ -1,4 +1,4 @@
 # https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
 name: OpenHAB add-on
-url: 'https://github.com/fdebrus/hassio-addons'
+url: 'https://github.com/fdebrus/hassio-addons/openhab_addon'
 maintainer: fdebrus
