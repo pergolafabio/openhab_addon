@@ -1,6 +1,6 @@
 name: "OpenHAB"
 description: "OpenHAB empowering the smart home"
-version: "4.0.5"
+version: "4.0.6"
 slug: "openhab"
 init: false
 usb: true
