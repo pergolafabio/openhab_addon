@@ -1,12 +1,12 @@
-ARG BUILD_FROM=alpine:3.18.4
-FROM ${BUILD_FROM}
+ARG BUILD_FROM
+FROM $BUILD_FROM
 
 ARG BUILD_DATE
 ARG VCS_REF
 
 ENV \
     JAVA_VERSION="17" \
-    OPENHAB_VERSION="4.1.0" \
+    OPENHAB_VERSION="4.1.1" \
     CRYPTO_POLICY="limited" \
     EXTRA_JAVA_OPTS="" \
     EXTRA_SHELL_OPTS="" \
@@ -60,6 +60,7 @@ RUN apk update --no-cache && \
         openjdk${JAVA_VERSION} \
         unzip \
         wget \
+        jq \
         zip && \
     chmod u+s /usr/sbin/arping && \
     rm -rf /var/cache/apk/*
@@ -96,7 +97,7 @@ EXPOSE 8080 8443 8101 5007 9124
 
 # Set healthcheck
 HEALTHCHECK --interval=5m --timeout=5s --retries=3 CMD curl -f http://localhost:${OPENHAB_HTTP_PORT}/ || exit 1
-
+   
 # Set working directory and entrypoint
 WORKDIR ${OPENHAB_HOME}
 COPY entrypoint /entrypoint

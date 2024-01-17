@@ -39,6 +39,12 @@ rm -f "${OPENHAB_USERDATA}/tmp/instances/instance.properties"
 # Raspberry Pi OS:    audio=29,  dialout=20, uucp=10, gpio=997
 NEW_USER_ID=${USER_ID:-9001}
 NEW_GROUP_ID=${GROUP_ID:-$NEW_USER_ID}
+
+# Define custom options for the Add-on
+CONFIG_PATH=/data/options.json
+OPENHAB_HTTP_PORT="$(jq --raw-output '.http_port' $CONFIG_PATH)"
+OPENHAB_HTTPS_PORT="$(jq --raw-output '.https_port' $CONFIG_PATH)"
+
 echo "Starting with openhab user id: $NEW_USER_ID and group id: $NEW_GROUP_ID"
 if ! id -u openhab >/dev/null 2>&1; then
   if [ -z "$(getent group $NEW_GROUP_ID)" ]; then
