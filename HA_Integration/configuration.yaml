@@ -1,4 +1,0 @@
-nikobus:
-  switches:
-    - name: "My Nikobus Switch"
-      port: "/dev/ttyUSB0"
