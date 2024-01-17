@@ -1,5 +1,7 @@
 # Home assistant add-on: OpenHAB
 
+![Reported Installations][installations-shield-stable]
+
 _Thanks to all contributors !_
 
 ![contributors](https://contrib.rocks/image?repo=fdebrus/hassio-addons)
