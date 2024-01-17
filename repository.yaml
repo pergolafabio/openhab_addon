@@ -1,6 +1,6 @@
 {
   "name": "Openhab Add-ons",
   "udev": true,
-  "url": ""https://github.com/fdebrus/hassio-addons",
+  "url": "https://github.com/fdebrus/hassio-addons",
   "maintainer": "fdebrus"
 }
