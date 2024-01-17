@@ -1,4 +1,6 @@
-# https://developers.home-assistant.io/docs/add-ons/repository#repository-configuration
-name: Openhab Add-ons
-url: "https://github.com/fdebrus/hassio-addons"
-maintainer: fdebrus
+{
+  "name": "Openhab Add-ons",
+  "udev": true,
+  "url": ""https://github.com/fdebrus/hassio-addons",
+  "maintainer": "fdebrus"
+}
