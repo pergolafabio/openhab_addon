@@ -44,7 +44,6 @@ NEW_GROUP_ID=${GROUP_ID:-$NEW_USER_ID}
 CONFIG_PATH=/data/options.json
 OPENHAB_HTTP_PORT="$(jq --raw-output '.http_port' $CONFIG_PATH)"
 OPENHAB_HTTPS_PORT="$(jq --raw-output '.https_port' $CONFIG_PATH)"
-OPENHAB_VERSION="$(jq --raw-output '.openhab_version' $CONFIG_PATH)"
 
 echo "Starting with openhab user id: $NEW_USER_ID and group id: $NEW_GROUP_ID"
 if ! id -u openhab >/dev/null 2>&1; then
