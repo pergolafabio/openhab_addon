@@ -99,11 +99,11 @@ EXPOSE 8080 8443 8101 5007 9124
 HEALTHCHECK --interval=5m --timeout=5s --retries=3 CMD curl -f http://localhost:${OPENHAB_HTTP_PORT}/ || exit 1
 
 # Set custom options for the add-on config
-CONFIG_PATH=/data/options.json
-
 ENV \
+    CONFIG_PATH=/data/options.json \
     OPENHAB_HTTP_PORT="$(jq --raw-output '.http_port' $CONFIG_PATH)" \
     OPENHAB_HTTPS_PORT="$(jq --raw-output '.https_port' $CONFIG_PATH)"
+    
 # Set working directory and entrypoint
 WORKDIR ${OPENHAB_HOME}
 COPY entrypoint /entrypoint
