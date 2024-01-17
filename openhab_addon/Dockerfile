@@ -60,6 +60,7 @@ RUN apk update --no-cache && \
         openjdk${JAVA_VERSION} \
         unzip \
         wget \
+        jq \
         zip && \
     chmod u+s /usr/sbin/arping && \
     rm -rf /var/cache/apk/*
