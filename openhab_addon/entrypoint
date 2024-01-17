@@ -107,6 +107,15 @@ if [ ! -z $(cmp "${OPENHAB_USERDATA}/etc/version.properties" "${OPENHAB_HOME}/di
 fi
 
 # Set openhab folder permission
+if [ ! -d ${OPENHAB_BACKUPS} ]
+then
+    echo "Backup doesn't exist. Creating now"
+    mkdir ./${OPENHAB_BACKUPS}
+    echo "Backup folder created"
+else
+    echo "Backup folder exists"
+fi
+
 chown -R openhab:openhab "${OPENHAB_HOME}"
 chown -R openhab:openhab "${OPENHAB_BACKUPS}"
 chown -R openhab:openhab "/config"
