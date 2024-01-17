@@ -14,9 +14,9 @@ map:
 host_network: true
 # Default options when used as an HA add-on
 options:
-    http_port: 8080
-    https_port: 8443
+  http_port: 8080
+  https_port: 8443
 # Schema for the options above
 schema:
-    http_port: int
-    https_port: str
+  http_port: int
+  https_port: str
