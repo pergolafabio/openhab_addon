@@ -157,7 +157,7 @@ jobs:
           # Create a single manifest from the two images
           docker manifest create \
             ghcr.io/${{ github.repository_owner }}/openhab_addon:$VERSION \
-            --amend ghcr.io/${{ github.repository_owner }}/openhab_addon:$VERSION-amd64
+            --amend ghcr.io/${{ github.repository_owner }}/openhab_addon:$VERSION-amd64 \
             --amend ghcr.io/${{ github.repository_owner }}/openhab_addon:$VERSION-aarch64
 
           # Push the updated manifest
