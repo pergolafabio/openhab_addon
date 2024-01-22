@@ -1,7 +1,7 @@
 name: "OpenHAB"
 description: "OpenHAB empowering the smart home"
 version: "4.1.1"
-ghcr.io/pergolafabio/openhab_addon
+image: ghcr.io/pergolafabio/openhab_addon
 slug: "openhab"
 init: false
 usb: true
