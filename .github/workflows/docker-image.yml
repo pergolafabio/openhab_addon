@@ -7,7 +7,6 @@ on:
     tags:
       - "openhab-v*"
 
-
 jobs:
   # Remove the prefix `openhab-v` from the Git tag and set it as output of this step
   extract-version:
@@ -104,7 +103,7 @@ jobs:
           # Disable latest tag
           flavor: |
             latest=false
-            suffix=-amd64
+            suffix=-aarch64
           labels: |
             org.opencontainers.image.title=Openhab Addon
             # Custom label required by Home Assistant supervisor
@@ -159,7 +158,7 @@ jobs:
           docker manifest create \
             ghcr.io/${{ github.repository_owner }}/openhab_addon:$VERSION \
             --amend ghcr.io/${{ github.repository_owner }}/openhab_addon:$VERSION-amd64
-            # --amend ghcr.io/${{ github.repository_owner }}/openhab_addon:$VERSION-aarch64
+            --amend ghcr.io/${{ github.repository_owner }}/openhab_addon:$VERSION-aarch64
 
           # Push the updated manifest
           docker manifest push ghcr.io/${{ github.repository_owner }}/openhab_addon:$VERSION
