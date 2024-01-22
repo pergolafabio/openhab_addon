@@ -1,6 +1,7 @@
 name: "OpenHAB"
 description: "OpenHAB empowering the smart home"
 version: "4.1.1"
+image: ghcr.io/fdebrus/openhab_addon
 slug: "openhab"
 init: false
 usb: true
@@ -8,6 +9,7 @@ uart: true
 udev: true
 arch:
   - amd64
+  - aarch64
 map:
   - addon_config:rw
   - backup:rw
