@@ -159,10 +159,7 @@ jobs:
           docker manifest create \
             ghcr.io/${{ github.repository_owner }}/openhab_addon:$VERSION \
             --amend ghcr.io/${{ github.repository_owner }}/openhab_addon:$VERSION-amd64 \
-            --amend ghcr.io/${{ github.repository_owner }}/hikvision-doorbell:$VERSION-aarch64 \
-            --amend ghcr.io/${{ github.repository_owner }}/hikvision-doorbell:$VERSION-armv7 \
-            --amend ghcr.io/${{ github.repository_owner }}/hikvision-doorbell:$VERSION-armhf \
-            --amend ghcr.io/${{ github.repository_owner }}/hikvision-doorbell:$VERSION-i386
+            --amend ghcr.io/${{ github.repository_owner }}/hikvision-doorbell:$VERSION-aarch64
 
           # Push the updated manifest
           docker manifest push ghcr.io/${{ github.repository_owner }}/openhab_addon:$VERSION
