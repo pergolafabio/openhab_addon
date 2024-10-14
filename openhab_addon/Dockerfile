@@ -6,7 +6,7 @@ ARG VCS_REF
 
 ENV \
     JAVA_VERSION="17" \
-    OPENHAB_VERSION="4.1.1" \
+    OPENHAB_VERSION="4.2.2" \
     CRYPTO_POLICY="limited" \
     EXTRA_JAVA_OPTS="" \
     EXTRA_SHELL_OPTS="" \
