@@ -14,11 +14,15 @@ map:
   - addon_config:rw
   - backup:rw
 host_network: true
+
 # Default options when used as an HA add-on
 options:
   http_port: 8080
   https_port: 8443
+  debug_mode: false
+
 # Schema for the options above
 schema:
   http_port: int
   https_port: int
+  debug_mode: bool
