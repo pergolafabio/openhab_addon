@@ -23,4 +23,4 @@ options:
 schema:
   http_port: int
   https_port: int
-  debug_mode: boolean
+  debug_mode: bool
