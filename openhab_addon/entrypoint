@@ -44,6 +44,7 @@ NEW_GROUP_ID=${GROUP_ID:-$NEW_USER_ID}
 CONFIG_PATH=/data/options.json
 OPENHAB_HTTP_PORT="$(jq --raw-output '.http_port' $CONFIG_PATH)"
 OPENHAB_HTTPS_PORT="$(jq --raw-output '.https_port' $CONFIG_PATH)"
+OPENHAB_DEBUG_MODE="$(jq --raw-output '.debug_mode' $CONFIG_PATH)"
 
 echo "Starting with openhab user id: $NEW_USER_ID and group id: $NEW_GROUP_ID"
 if ! id -u openhab >/dev/null 2>&1; then
@@ -132,8 +133,15 @@ fi
 # sync again after continuation scripts have been run
 sync
 
+# define debug mode 
+if [ ! -d "${OPENHAB_DEBUG_MODE}" == "false" ]; then
+  start_command="start.sh"
+else
+  start_command="start_debug.sh"
+fi
+
 # Use server mode with the default command when there is no pseudo-TTY
-if [ "$interactive" == "false" ] && [ "$(IFS=" "; echo "$@")" == "su-exec openhab tini -s ./start.sh" ]; then
+if [ "$interactive" == "false" ] && [ "$(IFS=" "; echo "$@")" == "su-exec openhab tini -s ./${start_command}" ]; then
   command=($@ server)
   exec "${command[@]}"
 else
