@@ -22,9 +22,7 @@ ENV \
     OPENHAB_HTTPS_PORT="8443" \
     OPENHAB_LOGDIR="/config/userdata/logs" \
     OPENHAB_USERDATA="/config/userdata" \
-    USER_ID="9001" \
-    DEBUG_MODE="false"
-    
+    USER_ID="9001"
 
 # Basic build-time metadata as defined at https://github.com/opencontainers/image-spec/blob/main/annotations.md#pre-defined-annotation-keys
 LABEL org.opencontainers.image.created=$BUILD_DATE \
@@ -106,5 +104,5 @@ COPY entrypoint /entrypoint
 RUN chmod +x /entrypoint
 ENTRYPOINT ["/entrypoint"]
 
-# Execute command (Check for debug mode and start appropriate script)
-CMD ["/bin/sh", "-c", "if [ \"$DEBUG_MODE\" = \"true\" ]; then su-exec openhab tini -s ./start_debug.sh; else su-exec openhab tini -s ./start.sh; fi"]
+# Execute command
+CMD ["su-exec", "openhab", "tini", "-s", "./start.sh"]
